@@ -9,6 +9,8 @@ Each operation in the Ejentum library (679 of them, organized across four harnes
 
 The natural-language layer tells the model *what* to do. The topology layer pins down *how* those steps connect: where to decide, where to loop, where to stop and look at itself. Together they act as a persistent attention anchor that survives long context windows and multi-turn execution chains, which is precisely where a model's own reasoning template typically decays.
 
+> **MCP alternative.** This Python package wraps the Logic API as a CrewAI-native tool. If you'd rather call the same four harness tools via MCP (for cross-framework portability or to share a single MCP server across multiple agents), they're now hosted at `https://api.ejentum.com/mcp` with Bearer auth via your `EJENTUM_API_KEY`. Same Logic API, same key.
+
 ## Installation
 
 ```bash
