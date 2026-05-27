@@ -85,10 +85,22 @@ class EjentumHarnessTool(BaseTool):
 
         if not query:
             return "Ejentum harness call failed: 'query' is required."
-        if mode not in {"reasoning", "code", "anti-deception", "memory"}:
+        valid_modes = {
+            "reasoning",
+            "code",
+            "anti-deception",
+            "memory",
+            "adaptive-reasoning",
+            "adaptive-code",
+            "adaptive-anti-deception",
+            "adaptive-memory",
+        }
+        if mode not in valid_modes:
             return (
                 f"Ejentum harness call failed: 'mode' must be one of "
-                f"reasoning|code|anti-deception|memory, got '{mode}'."
+                f"reasoning|code|anti-deception|memory|adaptive-reasoning|"
+                f"adaptive-code|adaptive-anti-deception|adaptive-memory, "
+                f"got '{mode}'."
             )
 
         api_key = os.environ.get("EJENTUM_API_KEY")
