@@ -24,7 +24,7 @@ from pydantic import Field
 from crewai_ejentum.schemas import EjentumHarnessParams
 
 
-DEFAULT_API_URL = "https://ejentum-main-ab125c3.zuplo.app/logicv1/"
+DEFAULT_API_URL = "https://api.ejentum.com/harness"
 
 
 class EjentumHarnessTool(BaseTool):
