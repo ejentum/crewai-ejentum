@@ -2,6 +2,8 @@
 
 [CrewAI](https://crewai.com) tool for the Ejentum Reasoning Harness. Exposes a single `EjentumHarnessTool` class with a `mode` parameter covering eight values: four dynamic (`reasoning`, `code`, `anti-deception`, `memory`) and four adaptive (`adaptive-reasoning`, `adaptive-code`, `adaptive-anti-deception`, `adaptive-memory`).
 
+Use the harness before the agent generates on complex, multi-step, or multi-constraint tasks where the model's default reasoning template would miss a constraint, take a shortcut, or drift across turns. Each call returns a *cognitive operation*: a structured procedure (numbered steps with a failure pattern to refuse and a falsification test) paired with an executable reasoning topology (a DAG of those steps with decision gates, parallel branches, bounded loops, and meta-cognitive exit nodes). The agent reads both layers before producing its response.
+
 Dynamic modes return the top-1 abstract operation from the matching library; adaptive modes additionally run an adapter LLM that rewrites the operation with task-specific identifiers. Adaptive modes require the Go or Super tier.
 
 ## Install
